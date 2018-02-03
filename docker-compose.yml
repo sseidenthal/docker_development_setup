@@ -1,0 +1,38 @@
+version: "3.2"
+
+services:
+
+  unison:  
+    image: neolao/unison
+    environment:  
+      - UNISON_VERSION=2.48.3
+      - UNISON_VOLUME=/unison
+    volumes:
+      - unison_api_one:/unison/api_one
+      - unison_api_two:/unison/api_two
+      - unison_api_three:/unison/api_three
+    ports:  
+      - "5000:5000"
+
+  api_one:  
+    image: php:7.1-cli
+    volumes:  
+      - unison_api_one:/var/www  
+    command: tail -f /dev/null
+
+  api_two:  
+    image: php:7.1-cli
+    volumes:  
+      - unison_api_two:/var/www  
+    command: tail -f /dev/null
+
+  api_three:  
+    image: php:7.1-cli
+    volumes:  
+      - unison_api_three:/var/www  
+    command: tail -f /dev/null
+
+volumes:
+  unison_api_one:
+  unison_api_two:
+  unison_api_three:
