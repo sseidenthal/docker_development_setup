@@ -19,5 +19,7 @@ cd my_project
 make
 make start
 make ps
-male log.unison
+make log.unison
 ```
+
+This is only a demo, you could imagine a lot of useful features to the Makefile
