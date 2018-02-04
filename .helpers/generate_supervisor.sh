@@ -3,7 +3,7 @@
 PWD=$(pwd)
 PATH=.helpers/conf/supervisor.conf
 
-touch $PATH;
+/usr/bin/touch $PATH;
 echo "[supervisord]" > $PATH;
 echo "nodaemon=false" >> $PATH;
 echo "" >> $PATH;
