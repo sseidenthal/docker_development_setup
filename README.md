@@ -6,6 +6,7 @@ I am testing a generic docker development setup for mac
 ```
 brew install supervisor
 brew install fsevents-tools
+brew install dialog
 ```
 
 ## Create Demo project
@@ -17,9 +18,12 @@ cd my_project
 ## Play with it
 ```
 make
+make install
 make start
-make ps
-make log.unison
+make docker.os
+make docker.enter
+make unison.log
+make stop
 ```
 
 This is only a demo, you could imagine a lot of useful features to the Makefile
