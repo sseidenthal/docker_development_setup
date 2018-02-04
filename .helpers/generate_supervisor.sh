@@ -15,9 +15,12 @@ echo "[rpcinterface:supervisor]" >> $PATH;
 echo "supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface" >> $PATH;
 echo "" >> $PATH;
 
-for i in `echo */`;
+SERVICES=$(/usr/bin/find services -mindepth 1 -maxdepth 1 -type d)
+
+for SERVICE in $SERVICES;
 do
-	echo "[program:${i%?}]" >> $PATH;
-	echo "command=/usr/local/bin/notifyloop ${PWD}/${i} .helpers/unison.sh ${i%?} ${PWD}" >> $PATH;
+	KEY=$(echo $SERVICE | /usr/bin/sed -e "s/^services\///");
+	echo "[program:${KEY}]" >> $PATH;
+	echo "command=/usr/local/bin/notifyloop ${PWD}/services/${KEY} .helpers/unison.sh ${KEY} ${PWD}/services" >> $PATH;
 	echo "" >> $PATH;
-done;
+done;	
