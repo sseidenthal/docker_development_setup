@@ -52,26 +52,26 @@ restart: check-os stop start
 
 install: check-os
 
-	#create project/service folder an checks out code
+	@# create project/service folder an checks out code
 	@.helpers/repositories.sh
 
 start: check-os
 	
-	#generating a config file for supervisord
+	@# generating a config file for supervisord
 	@.helpers/generate_supervisor.sh
 	
-	#running supervisor in order to keep sync helper running in the background
+	@# running supervisor in order to keep sync helper running in the background
 	@supervisord -c .helpers/conf/supervisor.conf
 
-	#start the container
+	@# start the container
 	@docker-compose up -d
 
 stop: check-os
 	
-	#shutdown supervisor because we do not need to sync when projects are stopped
+	@# shutdown supervisor because we do not need to sync when projects are stopped
 	@supervisorctl shutdown
 
-	#stop containers
+	@# stop containers
 	@docker-compose down
 
 docker:
@@ -80,7 +80,7 @@ docker:
 	@echo "  - make docker.enter, let's you enter in your containers" 
 
 docker.ps:
-	@clear;docker ps --format '{{.Names}}'
+	@docker ps --format '{{.Names}}'
 
 docker.enter:
 	@.helpers/docker_ps_menu.sh
