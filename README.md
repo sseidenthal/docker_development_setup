@@ -7,6 +7,7 @@ I am testing a generic docker development setup for mac
 brew install supervisor
 brew install fsevents-tools
 brew install dialog
+brew install unison
 ```
 
 ## Create Demo project
