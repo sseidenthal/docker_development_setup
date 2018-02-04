@@ -3,7 +3,11 @@
 		{
 			"url" : "https://github.com/sseidenthal/Zf2Doctrine2-Skeleton.git",
 			"branch" : "master",
-			"path" : "api_hehe"
+			"path" : "api_hehe",
+			"commands" : {
+				"target" : "container",
+				"command" : "composer install"
+			}
 		},
 		{
 			"url" : "https://github.com/sseidenthal/Zf2Doctrine2-Skeleton.git",

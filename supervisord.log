@@ -214,3 +214,87 @@
 2018-02-03 21:50:14,409 INFO success: api_one entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2018-02-03 21:50:14,410 INFO success: api_two entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2018-02-03 21:50:14,410 INFO success: api_four entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-03 21:54:59,347 INFO waiting for api_three, api_one, api_two, api_four to die
+2018-02-03 21:54:59,348 INFO stopped: api_four (terminated by SIGTERM)
+2018-02-03 21:54:59,349 INFO stopped: api_two (terminated by SIGTERM)
+2018-02-03 21:54:59,349 INFO stopped: api_one (terminated by SIGTERM)
+2018-02-03 21:54:59,350 INFO stopped: api_three (terminated by SIGTERM)
+2018-02-04 09:01:00,829 INFO RPC interface 'supervisor' initialized
+2018-02-04 09:01:00,830 CRIT Server 'inet_http_server' running without any HTTP authentication checking
+2018-02-04 09:01:00,831 INFO daemonizing the supervisord process
+2018-02-04 09:01:00,833 INFO supervisord started with pid 23500
+2018-02-04 09:01:01,835 INFO spawned: 'api_four' with pid 23506
+2018-02-04 09:01:01,837 INFO spawned: 'api_huhu' with pid 23507
+2018-02-04 09:01:01,840 INFO spawned: 'api_three' with pid 23508
+2018-02-04 09:01:01,843 INFO spawned: 'api_one' with pid 23509
+2018-02-04 09:01:01,847 INFO spawned: 'api_hehe' with pid 23511
+2018-02-04 09:01:01,850 INFO spawned: 'api_two' with pid 23514
+2018-02-04 09:01:02,862 INFO success: api_four entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:01:02,862 INFO success: api_huhu entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:01:02,863 INFO success: api_three entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:01:02,864 INFO success: api_one entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:01:02,864 INFO success: api_hehe entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:01:02,864 INFO success: api_two entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:01:06,267 INFO waiting for api_four, api_huhu, api_three, api_one, api_hehe, api_two to die
+2018-02-04 09:01:06,267 INFO stopped: api_two (terminated by SIGTERM)
+2018-02-04 09:01:06,268 INFO stopped: api_hehe (terminated by SIGTERM)
+2018-02-04 09:01:06,269 INFO stopped: api_one (terminated by SIGTERM)
+2018-02-04 09:01:06,270 INFO stopped: api_three (terminated by SIGTERM)
+2018-02-04 09:01:06,271 INFO stopped: api_huhu (terminated by SIGTERM)
+2018-02-04 09:01:06,272 INFO stopped: api_four (terminated by SIGTERM)
+2018-02-04 09:01:29,862 INFO RPC interface 'supervisor' initialized
+2018-02-04 09:01:29,863 CRIT Server 'inet_http_server' running without any HTTP authentication checking
+2018-02-04 09:01:29,865 INFO daemonizing the supervisord process
+2018-02-04 09:01:29,866 INFO supervisord started with pid 23542
+2018-02-04 09:01:30,869 INFO spawned: 'api_four' with pid 23548
+2018-02-04 09:01:30,871 INFO spawned: 'api_huhu' with pid 23549
+2018-02-04 09:01:30,874 INFO spawned: 'api_three' with pid 23550
+2018-02-04 09:01:30,877 INFO spawned: 'api_one' with pid 23551
+2018-02-04 09:01:30,881 INFO spawned: 'api_hehe' with pid 23554
+2018-02-04 09:01:30,885 INFO spawned: 'api_two' with pid 23556
+2018-02-04 09:01:31,901 INFO success: api_four entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:01:31,901 INFO success: api_huhu entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:01:31,901 INFO success: api_three entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:01:31,902 INFO success: api_one entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:01:31,902 INFO success: api_hehe entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:01:31,902 INFO success: api_two entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:03:18,870 INFO waiting for api_four, api_huhu, api_three, api_one, api_hehe, api_two to die
+2018-02-04 09:03:18,871 INFO stopped: api_two (terminated by SIGTERM)
+2018-02-04 09:03:18,871 INFO stopped: api_hehe (terminated by SIGTERM)
+2018-02-04 09:03:18,872 INFO stopped: api_one (terminated by SIGTERM)
+2018-02-04 09:03:18,873 INFO stopped: api_three (terminated by SIGTERM)
+2018-02-04 09:03:18,874 INFO stopped: api_huhu (terminated by SIGTERM)
+2018-02-04 09:03:18,874 INFO stopped: api_four (terminated by SIGTERM)
+2018-02-04 09:07:16,679 INFO RPC interface 'supervisor' initialized
+2018-02-04 09:07:16,679 CRIT Server 'inet_http_server' running without any HTTP authentication checking
+2018-02-04 09:07:16,681 INFO daemonizing the supervisord process
+2018-02-04 09:07:16,682 INFO supervisord started with pid 23661
+2018-02-04 09:07:17,686 INFO spawned: 'api_four' with pid 23669
+2018-02-04 09:07:17,690 INFO spawned: 'api_huhu' with pid 23670
+2018-02-04 09:07:17,693 INFO spawned: 'api_three' with pid 23671
+2018-02-04 09:07:17,696 INFO spawned: 'api_one' with pid 23673
+2018-02-04 09:07:17,700 INFO spawned: 'api_hehe' with pid 23674
+2018-02-04 09:07:17,704 INFO spawned: 'api_two' with pid 23676
+2018-02-04 09:07:18,718 INFO success: api_four entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:07:18,718 INFO success: api_huhu entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:07:18,719 INFO success: api_three entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:07:18,719 INFO success: api_one entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:07:18,719 INFO success: api_hehe entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 09:07:18,719 INFO success: api_two entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 10:11:36,283 INFO RPC interface 'supervisor' initialized
+2018-02-04 10:11:36,283 CRIT Server 'inet_http_server' running without any HTTP authentication checking
+2018-02-04 10:11:36,285 INFO daemonizing the supervisord process
+2018-02-04 10:11:36,286 INFO supervisord started with pid 27150
+2018-02-04 10:11:37,289 INFO spawned: 'api_three' with pid 27157
+2018-02-04 10:11:37,292 INFO spawned: 'api_one' with pid 27158
+2018-02-04 10:11:37,295 INFO spawned: 'api_two' with pid 27159
+2018-02-04 10:11:37,298 INFO spawned: 'api_four' with pid 27160
+2018-02-04 10:11:38,310 INFO success: api_three entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 10:11:38,311 INFO success: api_one entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 10:11:38,311 INFO success: api_two entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 10:11:38,311 INFO success: api_four entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-02-04 10:24:17,246 INFO waiting for api_three, api_one, api_two, api_four to die
+2018-02-04 10:24:17,246 INFO stopped: api_four (terminated by SIGTERM)
+2018-02-04 10:24:17,247 INFO stopped: api_two (terminated by SIGTERM)
+2018-02-04 10:24:17,248 INFO stopped: api_one (terminated by SIGTERM)
+2018-02-04 10:24:17,249 INFO stopped: api_three (terminated by SIGTERM)

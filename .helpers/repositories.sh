@@ -9,7 +9,7 @@ do
 		echo ${PROJECT} | base64 --decode | jq -r ${1}
 	}
 	
-	PROJECT_PATH=$(_jq '.path');
+	PROJECT_PATH=services/$(_jq '.path');
 	PROJECT_GIT=$(_jq '.url');
 
 	mkdir -p $PROJECT_PATH;
