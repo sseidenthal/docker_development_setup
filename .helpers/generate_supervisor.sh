@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PWD=$(pwd)
-PATH=.helpers/conf/supervisor.conf
+PATH=$PWD/.helpers/conf/supervisor.conf
 
 /usr/bin/touch $PATH;
 echo "[supervisord]" > $PATH;
