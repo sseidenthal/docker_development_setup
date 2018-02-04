@@ -1,3 +1,4 @@
 /services
 /.helpers/conf/supervisor.conf
 /supervisord.log
+/supervisord.pid
