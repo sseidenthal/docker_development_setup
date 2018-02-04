@@ -12,6 +12,11 @@ CURRENT_RELEASE := $(shell uname -s)
 PWD := $(shell pwd)
 CONTAINER := $(shell $1)
 
+IS_UNISON_INSTALLED := $(shell which unison)
+IS_SUPERVISOR_INSTALLED := $(shell which supervisord)
+IS_DIALOG_INSTALLED := $(shell which dialog)
+IS_NOTIFYLOOP_INSTALLED := $(shell which notifyloop)
+
 hello:
 	@echo "Hello Developer, how can i help you ;)"
 	@echo "  - make install, creates project folder and checks out repositories as defined in config.json" 
@@ -20,7 +25,25 @@ hello:
 	@echo "  - make unison, see unison helpers" 
 	@echo "  - make docker, see docker helpers" 
 
-check-os:
+check-dependencies:
+ifeq ($(IS_UNISON_INSTALLED), )
+	$(error "unison is not installed, please run `brew install unison`")
+endif
+
+ifeq ($(IS_DIALOG_INSTALLED), )
+	$(error "dialog is not installed, please run `brew install dialog`")
+endif
+
+ifeq ($(IS_NOTIFYLOOP_INSTALLED), )
+	$(error "notifyloop is not installed, please run `brew install fsevents-tools`")
+endif
+
+ifeq ($(IS_SUPERVISOR_INSTALLED), )
+	$(error "supervisord is not installed, please run `brew install supervisor`")
+endif
+
+
+check-os: check-dependencies
 ifneq ($(CURRENT_RELEASE), Darwin)
 	$(error "this script currently only supports macOs, feel free to extend it.")
 endif
