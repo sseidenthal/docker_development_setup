@@ -6,8 +6,6 @@ SHELL=/bin/bash
 #version         :0.1    
 #usage		 	 :make, then follow the instructions
 
-#launchctl load ./$${i%?}/sync.plist;
-
 CURRENT_RELEASE := $(shell uname -s)
 PWD := $(shell pwd)
 CONTAINER := $(shell $1)
