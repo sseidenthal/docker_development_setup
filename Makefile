@@ -53,26 +53,26 @@ restart: check-os stop start
 install: check-os
 
 	#create project/service folder an checks out code
-	.helpers/repositories.sh
+	@.helpers/repositories.sh
 
 start: check-os
 	
 	#generating a config file for supervisord
-	.helpers/generate_supervisor.sh
+	@.helpers/generate_supervisor.sh
 	
 	#running supervisor in order to keep sync helper running in the background
-	supervisord -c .helpers/conf/supervisor.conf
+	@supervisord -c .helpers/conf/supervisor.conf
 
 	#start the container
-	docker-compose up -d
+	@docker-compose up -d
 
 stop: check-os
 	
 	#shutdown supervisor because we do not need to sync when projects are stopped
-	supervisorctl shutdown
+	@supervisorctl shutdown
 
 	#stop containers
-	docker-compose down
+	@docker-compose down
 
 docker:
 	@echo "Docker Helpers"
@@ -80,15 +80,15 @@ docker:
 	@echo "  - make docker.enter, let's you enter in your containers" 
 
 docker.ps:
-	clear;docker ps --format '{{.Names}}'
+	@clear;docker ps --format '{{.Names}}'
 
 docker.enter:
-	.helpers/docker_ps_menu.sh
-	#clear;docker exec -it $${1} bash
+	@.helpers/docker_ps_menu.sh
+	
 
 unison:
 	@echo "Unison Helpers"
 	@echo "  - make unison.log, shows ~/unison.log useful when debugging sync issues" 
 
 unison.log:
-	clear;tail -f ~/unison.log
+	@tail -f ~/unison.log
