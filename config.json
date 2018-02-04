@@ -1,0 +1,14 @@
+{
+	"repositories" : [
+		{
+			"url" : "https://github.com/sseidenthal/Zf2Doctrine2-Skeleton.git",
+			"branch" : "master",
+			"path" : "api_hehe"
+		},
+		{
+			"url" : "https://github.com/sseidenthal/Zf2Doctrine2-Skeleton.git",
+			"branch" : "master",
+			"path" : "api_huhu"
+		}
+	]
+}
