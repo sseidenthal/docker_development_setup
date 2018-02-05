@@ -34,12 +34,12 @@ do
 		PROJECT_BRANCH=$(_jq '.branch');
 		PROJECT_UNSION=$(_jq '.enable_unison_sync');
 		FULL_PATH=/workspace/$WORKSPACE_PATH/$PROJECT_PATH;
+		FULL_PATH_A=$WORKSPACE_PATH/$PROJECT_PATH;
 		
-
 		# create folder and checkout code
 		if [ "$1" = "checkout" ]; then
-			mkdir -p ${PWD}${FULL_PATH};
-			git clone $PROJECT_GIT ${PWD}${FULL_PATH} --branch $PROJECT_BRANCH;
+			mkdir -p ${FULL_PATH_A};
+			git clone $PROJECT_GIT ${FULL_PATH_A} --branch $PROJECT_BRANCH;
 		fi;
 
 		# add program to supervisor
