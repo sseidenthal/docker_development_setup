@@ -1,19 +1,40 @@
 {
-	"repositories" : [
-		{
-			"url" : "https://github.com/sseidenthal/Zf2Doctrine2-Skeleton.git",
-			"branch" : "master",
-			"path" : "api_one"
-		},
-		{
-			"url" : "https://github.com/sseidenthal/Zf2Doctrine2-Skeleton.git",
-			"branch" : "master",
-			"path" : "api_two"
-		},
-		{
-			"url" : "https://github.com/sseidenthal/Zf2Doctrine2-Skeleton.git",
-			"branch" : "master",
-			"path" : "api_three"
-		}
-	]
+  "unison": {
+    "target": "socket://localhost:5000/"
+  },
+  "workspaces": [
+    {
+      "path": "infrastructure",
+      "repositories": [
+        {
+          "branch": "master",
+          "path": "database",
+          "enable_unison_sync": false,
+          "url": "https://github.com/sseidenthal/Zf2Doctrine2-Skeleton.git"
+        }
+      ]
+    },
+    {
+      "path": "service",
+      "repositories": [
+        {
+          "branch": "master",
+          "path": "service_haha",
+          "enable_unison_sync": true,
+          "url": "https://github.com/sseidenthal/Zf2Doctrine2-Skeleton.git"
+        }
+      ]
+    },
+    {
+      "path": "frontend",
+      "repositories": [
+        {
+          "branch": "master",
+          "path": "frontend_huhu",
+          "enable_unison_sync": true,
+          "url": "https://github.com/sseidenthal/Zf2Doctrine2-Skeleton.git"
+        }
+      ]
+    }
+  ]
 }

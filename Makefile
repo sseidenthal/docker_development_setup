@@ -51,7 +51,7 @@ restart: check-os stop start
 install: check-os
 
 	@# create project/service folder an checks out code
-	@.helpers/repositories.sh
+	@.helpers/main.sh checkout
 
 start: check-os
 	
@@ -62,7 +62,7 @@ start: check-os
 	@supervisord -c .helpers/conf/supervisor.conf
 
 	@# start the container
-	@docker-compose up -d
+	@.helpers/main.sh compose_up
 
 stop: check-os
 	

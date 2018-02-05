@@ -1,6 +1,6 @@
 #/bin/bash
 
-BASE_TARGET=socket://localhost:5000/
+BASE_TARGET=$3
 
 SOURCE="$2/$1"
 TARGET="$BASE_TARGET$1"
