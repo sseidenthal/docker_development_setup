@@ -8,6 +8,7 @@ brew install supervisor
 brew install fsevents-tools
 brew install dialog
 brew install unison
+brew install jq
 ```
 
 ## Create Demo project
