@@ -76,14 +76,17 @@ docker:
 	@echo "Docker Helpers"
 	@echo "  - make docker.ps, gets you a list of running container" 
 	@echo "  - make docker.enter, let's you enter in your containers" 
+	@echo "  - make docker.logs, let's you see log files of containers" 
 
 docker.ps:
 	@docker ps --format '{{.Names}}'
 
 docker.enter:
 	@.helpers/docker_ps_menu.sh
-	
 
+docker.logs:
+	@.helpers/docker_log_menu.sh
+	
 unison:
 	@echo "Unison Helpers"
 	@echo "  - make unison.log, shows ~/unison.log useful when debugging sync issues" 
