@@ -1,19 +1,33 @@
 #!/bin/bash
 
 file=$(cat config.json)
-repositories=$(echo "${file}" | jq -r '.repositories | @base64')
 
-for PROJECT in $(echo "${repositories}" | base64 --decode | jq -r '.[] | @base64');
+workspaces=$(echo "${file}" | jq -r '.workspaces | @base64')
+
+for WORKSPACE in $(echo "${workspaces}" | base64 --decode | jq -r '.[] | @base64');
 do
 	_jq() {
-		echo ${PROJECT} | base64 --decode | jq -r ${1}
+		echo ${WORKSPACE} | base64 --decode | jq -r ${1}
 	}
 	
-	PROJECT_PATH=services/$(_jq '.path');
-	PROJECT_GIT=$(_jq '.url');
+	WORKSPACE_PATH=$(_jq '.path');
+	WORKSPACE_REPOSITORIES=$(_jq '.repositories' | base64);
+	
+	for WORKSPACE_REPOSITORY in $(echo "${WORKSPACE_REPOSITORIES}" | base64 --decode | jq -r '.[] | @base64');
+	do
+		_jq() {
+			echo ${WORKSPACE_REPOSITORY} | base64 --decode | jq -r ${1}
+		}
+		
+		PROJECT_PATH=services/$(_jq '.path');
+		PROJECT_GIT=$(_jq '.url');
+		PROJECT_BRANCH=$(_jq '.branch');
 
-	mkdir -p $PROJECT_PATH;
-	git clone $PROJECT_GIT $PROJECT_PATH;
+		FULL_PATH=workspace/$WORKSPACE_PATH/$PROJECT_PATH
+
+		mkdir -p $FULL_PATH;
+		git clone $PROJECT_GIT $FULL_PATH --branch $PROJECT_BRANCH;
+
+	done
 
 done
-

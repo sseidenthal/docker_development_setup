@@ -1,4 +1,6 @@
-/services
+/workspace/infrastructure/services
+/workspace/frontend/services
+/workspace/service/services
 /.helpers/conf/supervisor.conf
 /supervisord.log
 /supervisord.pid
