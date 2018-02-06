@@ -1,17 +1,15 @@
 #!/bin/bash
 
-echo "HELLO $1"
-
 file=$(/bin/cat config.json)
 
 UNISON_TARGET=$(echo "${file}" | /usr/local/bin/jq -r '.unison.target')
 
-workspaces=$(echo "${file}" | /usr/local/bin/jq -r '.workspaces | @base64')
+projects=$(echo "${file}" | /usr/local/bin/jq -r '.projects | @base64')
 
-for WORKSPACE in $(echo "${workspaces}" | /usr/bin/base64 --decode | /usr/local/bin/jq -r '.[] | @base64');
+for PROJECT in $(echo "${projects}" | /usr/bin/base64 --decode | /usr/local/bin/jq -r '.[] | @base64');
 do
 	_jq() {
-		echo ${WORKSPACE} | /usr/bin/base64 --decode | /usr/local/bin/jq -r ${1}
+		echo ${PROJECT} | /usr/bin/base64 --decode | /usr/local/bin/jq -r ${1}
 	}
 	
 	WORKSPACE_FOLDER=$(_jq '.path');

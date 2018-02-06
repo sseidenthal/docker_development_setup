@@ -2,7 +2,7 @@
   "unison": {
     "target": "socket://localhost:5000/"
   },
-  "workspaces": [
+  "projects": [
     {
       "path": "infrastructure",
       "repositories": [
