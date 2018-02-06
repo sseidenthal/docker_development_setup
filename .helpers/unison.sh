@@ -1,16 +1,19 @@
 #/bin/bash
 
-BASE_TARGET=$3
+WORKSPACE_KEY=$1
+PROJECT_KEY=$2
+LOCAL_HOME=$3
+REMOTE_HOME=$4
 
-SOURCE="$2/$1"
-TARGET="$BASE_TARGET$1"
+SOURCE=${LOCAL_HOME}/${PROJECT_KEY}
+TARGET=${REMOTE_HOME}${WORKSPACE_KEY}_${PROJECT_KEY}/_data
 
 unison \
 	-root=$SOURCE \
 	-root=$TARGET \
 	-auto=true \
 	-batch=true \
-	-confirmbigdel=true \
+	-confirmbigdel=false \
 	-fastcheck=true \
 	-group=false \
 	-owner=false \

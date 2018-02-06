@@ -1,0 +1,10 @@
+version: '3.2'
+services:
+  huhu_haha:
+    image: "php:cli"
+    command: tail -f /dev/null
+    volumes:
+      - huhu_haha:/var/www
+
+volumes:
+  huhu_haha:

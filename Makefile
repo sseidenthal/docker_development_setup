@@ -70,7 +70,7 @@ stop: check-os
 	@supervisorctl shutdown
 
 	@# stop containers
-	@docker-compose down
+	@.helpers/main.sh compose_down
 
 docker:
 	@echo "Docker Helpers"

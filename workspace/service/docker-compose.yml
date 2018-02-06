@@ -1,0 +1,9 @@
+version: '3.2'
+services:
+  haha:
+    image: "redis:alpine"
+    volumes:
+      - haha:/var/www
+
+volumes:
+  haha:

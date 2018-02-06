@@ -20,6 +20,10 @@ do
 		docker-compose --file=${WORKSPACE_PATH}/docker-compose.yml up -d
 	fi;
 
+	if [ "$1" = "compose_down" ]; then
+		docker-compose --file=${WORKSPACE_PATH}/docker-compose.yml down
+	fi;
+
 	for WORKSPACE_REPOSITORY in $(echo "${WORKSPACE_REPOSITORIES}" | /usr/bin/base64 --decode | /usr/local/bin/jq -r '.[] | @base64');
 	do
 		_jq() {
@@ -31,7 +35,7 @@ do
 		PROJECT_GIT=$(_jq '.url');
 		PROJECT_BRANCH=$(_jq '.branch');
 		PROJECT_UNSION=$(_jq '.enable_unison_sync');
-		FULL_PATH=/workspace/$WORKSPACE_PATH/$PROJECT_PATH;
+		FULL_PATH=$WORKSPACE_PATH/$PROJECT_PATH;
 		FULL_PATH_A=$WORKSPACE_PATH/$PROJECT_PATH;
 		
 		# create folder and checkout code
@@ -44,7 +48,7 @@ do
 		if [ "$1" = "supervisor" ]; then
 			if ${PROJECT_UNSION}; then
 				echo "[program:${PROJECT_KEY}]" >> $2;
-				echo "command=/usr/local/bin/notifyloop ${PWD}${FULL_PATH} .helpers/unison.sh ${PROJECT_KEY} ${WORKSPACE_PATH}/services ${UNISON_TARGET}" >> $2;
+				echo "command=/usr/local/bin/notifyloop ${FULL_PATH} .helpers/unison.sh ${WORKSPACE_FOLDER} ${PROJECT_KEY} ${WORKSPACE_PATH}/services ${UNISON_TARGET}" >> $2;
 				echo "" >> $2;
 			fi;
 		fi;
