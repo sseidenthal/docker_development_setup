@@ -46,6 +46,9 @@ ifneq ($(CURRENT_RELEASE), Darwin)
 	$(error "this script currently only supports macOs, feel free to extend it.")
 endif
 
+create-vm:
+	docker-machine create --driver generic --generic-ip-address=192.168.100.100 --generic-ssh-user=developer --generic-ssh-key ~/.ssh/id_rsa \devbox
+
 restart: check-os stop start
 
 install: check-os

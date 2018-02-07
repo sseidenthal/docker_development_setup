@@ -1,6 +1,6 @@
 {
   "unison": {
-    "target": "socket://192.168.86.212:5000/"
+    "target": "socket://192.168.70.142:5000/"
   },
   "projects": [
     {
