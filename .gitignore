@@ -4,3 +4,4 @@
 /.helpers/conf/supervisor.conf
 /supervisord.log
 /supervisord.pid
+.vagrant/machines/*
