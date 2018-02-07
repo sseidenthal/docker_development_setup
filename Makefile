@@ -24,6 +24,7 @@ hello:
 	@echo "  - make docker, see docker helpers" 
 
 check-dependencies:
+
 ifeq ($(IS_UNISON_INSTALLED), )
 	$(error "unison is not installed, please run `brew install unison`")
 endif
@@ -46,8 +47,11 @@ ifneq ($(CURRENT_RELEASE), Darwin)
 	$(error "this script currently only supports macOs, feel free to extend it.")
 endif
 
-create-vm:
-	docker-machine create --driver generic --generic-ip-address=192.168.100.100 --generic-ssh-user=developer --generic-ssh-key ~/.ssh/id_rsa \devbox
+ssh:
+	@vagrant ssh
+
+docker.machine.create:
+	docker-machine create --driver generic --generic-ip-address=192.168.100.100 --generic-ssh-user=vagrant --generic-ssh-key=.vagrant/machines/default/virtualbox/private_key devbox
 
 restart: check-os stop start
 
@@ -80,8 +84,10 @@ docker:
 	@echo "  - make docker.ps, gets you a list of running container" 
 	@echo "  - make docker.enter, let's you enter in your containers" 
 	@echo "  - make docker.logs, let's you see log files of containers" 
+	@echo "  - name docker.machine.create, uses your vmware as docker machine"
 
 docker.ps:
+	@.helpers/docker.sh;
 	@docker ps --format '{{.Names}}'
 
 docker.enter:
