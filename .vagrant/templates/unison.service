@@ -1,0 +1,16 @@
+[Unit]
+Description=Unison Server
+After=network.target auditd.service
+
+[Service]
+Environment="HOME=/root"
+WorkingDirectory=/var/lib/docker/volumes
+ExecStart=/usr/bin/unison -socket 5000
+KillMode=process
+Restart=on-failure
+RestartPreventExitStatus=255
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
+Alias=sshd.service

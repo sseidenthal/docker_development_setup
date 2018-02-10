@@ -50,8 +50,11 @@ endif
 ssh:
 	@vagrant ssh
 
+vagrant.up:
+	@vagrant up
+
 docker.machine.create:
-	docker-machine create --driver generic --generic-ip-address=192.168.100.100 --generic-ssh-user=vagrant --generic-ssh-key=.vagrant/machines/default/virtualbox/private_key devbox
+	@docker-machine create --driver generic --generic-ip-address=192.168.100.100 --generic-ssh-user=vagrant --generic-ssh-key ~/.ssh/id_rsa devbox
 
 restart: check-os stop start
 
